@@ -267,7 +267,7 @@ processing:
 
                         case 'member':
                             $nextElements = array('struct' => true, 'member' => true);
-                            $aggregates[$depth - 1][$aggregates[$depth]['name']] = $aggregates[$depth][0];
+                            $aggregates[$depth - 1][$aggregates[$depth]['name']] = isset($aggregates[$depth][0]) ? $aggregates[$depth][0] : null;
                             unset($aggregates[$depth], $aggregates[$depth + 1]);
                             --$depth;
                             break;
